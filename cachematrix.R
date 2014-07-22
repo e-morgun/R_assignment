@@ -1,8 +1,6 @@
 ## Caching the inverse of a matrix
 ## Assignment 2, Coursera R programming
 
-## Author: Eva M.
-
 ## By using makeCacheMatrix and cacheSolve, user should
 ## be able to input a matrix, and obtain an object 
 ## that only calculates the matrix's invese once
