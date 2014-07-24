@@ -2,19 +2,19 @@
 ## Assignment 2, Coursera R programming
 
 ## By using makeCacheMatrix and cacheSolve, user should
-## be able to input a matrix, and obtain an object 
-## that only calculates the matrix's invese once
-## further calls on the matrix inverse through cacheSolve
-## will draw the already saved value
+## be able to input a matrix and obtain an object 
+## that only calculates the matrix's invese once.
+## Further calls on the matrix inverse through cacheSolve
+## will draw the already saved value.
 
-## Input matrix is assumed to be invertable
+## Note: Input matrix is assumed to be invertable
 
 
 ## MakeCacheMatix
 ## takes object type matrix
 ## function that creates a matrix with a cacheable inverse
-
 makeCacheMatrix <- function(x = matrix()) {
+  
   invers <- NULL
   
   set <- function(y) {
@@ -40,13 +40,17 @@ makeCacheMatrix <- function(x = matrix()) {
 ## returns calculates matrix inverse or returns cached copy
 
 cacheSolve <- function(x, ...) {
+  
   invers <- x$get_inverse()
+  
   if(!is.null(invers)){
     message("getting cached data")
     return(invers)
   }
+  
   mat <- x$get()
   invers <- solve(mat, ...)
   x$set_inverse(invers)
+  
   invers  # returning a matrix that is inverse of x
 }
